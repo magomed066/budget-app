@@ -4,6 +4,7 @@ import { createBrowserRouter } from 'react-router-dom'
 import { routes } from '@/shared/utils'
 
 import LoginPage from '@/pages/login'
+import { BaseLayout } from '@/app/layouts'
 const DashboardPage = React.lazy(() => import('@/pages/dashboard'))
 
 export const routing = createBrowserRouter([
@@ -13,6 +14,12 @@ export const routing = createBrowserRouter([
   },
   {
     path: routes.DASHBOARD,
-    element: <DashboardPage />,
+    element: <BaseLayout />,
+    children: [
+      {
+        path: routes.DASHBOARD,
+        element: <DashboardPage />,
+      },
+    ],
   },
 ])

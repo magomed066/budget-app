@@ -1,5 +1,5 @@
 const DashboardPage = () => {
-  return <div>dashboard.ui</div>
+  return <div>hello world</div>
 }
 
 export default DashboardPage
